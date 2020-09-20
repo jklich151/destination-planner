@@ -6,6 +6,15 @@ class DestinationsController < ApplicationController
   end
 
   def show
+    weather_search = WeatherSearch.new(@destination.zip)
+    @current_weather = weather_search.get_weather
+    @weather_image = weather_search.get_image(@current_weather.summary)
+    # faraday = Faraday.new('https://api.openweathermap.org')
+
+    # response = faraday.get('/data/2.5/weather') do |f|
+    #   f.params['zip'] = @destination.zip
+    #   f.params['appid'] = ENV["WEATHER_KEY"]
+    # end
   end
 
   def new

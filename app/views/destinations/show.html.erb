@@ -19,7 +19,23 @@
 
   <div class="row">
     <h4>Forecast for <%= @destination.name %>:</h4>
-
+    <div class="current_weather">
+      <p id="date">
+        <%= @current_weather.date %>
+      </p>
+      <p id="temp-high">
+        <%= @current_weather.temp_high %>
+      </p>
+      <p id="temp-low">
+        <%= @current_weather.temp_low %>
+      </p>
+      <p id="summary">
+        <%= @current_weather.summary %>
+      </p>
+      <p id="image">
+        <%= image_tag @weather_image.image %>
+      </p>
+    </div>
   </div>
 
   <div class="row">
